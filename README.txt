@@ -13,6 +13,12 @@
 #
 #
 
+/etc/yum.repos.d/CentOS-Base.repo
+
+
+
+
+
 [base]
 name=CentOS-$releasever - Base
 mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os
@@ -65,3 +71,9 @@ baseurl=http://vault.centos.org/6.8/contrib/x86_64/
 gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
+
+
+
+
+
+yum clean all
