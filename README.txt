@@ -27,7 +27,7 @@ baseurl=http://vault.centos.org/6.8/os/x86_64/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
 
-=======================================================================================================
+#=======================================================================================================
 #released updates
 [updates]
 name=CentOS-$releasever - Updates
@@ -37,7 +37,7 @@ baseurl=http://vault.centos.org/6.8/updates/x86_64/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
 
-=======================================================================================================
+#=======================================================================================================
 
 #additional packages that may be useful
 [extras]
@@ -50,7 +50,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
 
 
 
-===========================END=========================================================================
+#===========================END=========================================================================
 
 #additional packages that extend functionality of existing packages
 [centosplus]
