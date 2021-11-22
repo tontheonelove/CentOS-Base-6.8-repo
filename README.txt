@@ -1,6 +1,3 @@
-# CentOS-Base-6.8-repo
-
-
 # CentOS-Base.repo
 #
 # The mirror system uses the connecting IP address of the client and the
@@ -13,45 +10,46 @@
 #
 #
 
-[C6.8-base]
-name=CentOS-6.8 - Base
-baseurl=http://vault.centos.org/6.8/os/$basearch/
+[base]
+name=CentOS-$releasever - Base
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
+baseurl=https://vault.centos.org/6.10/os/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-enabled=1
-metadata_expire=never
 
-[C6.8-updates]
-name=CentOS-6.8 - Updates
-baseurl=http://vault.centos.org/6.8/updates/$basearch/
+#released updates 
+[updates]
+name=CentOS-$releasever - Updates
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
+baseurl=https://vault.centos.org/6.10/updates/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-enabled=1
-metadata_expire=never
 
-[C6.8-extras]
-name=CentOS-6.8 - Extras
-baseurl=http://vault.centos.org/6.8/extras/$basearch/
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras&infra=$infra
+baseurl=https://vault.centos.org/6.8/extras/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
-enabled=1
-metadata_expire=never
 
-[C6.8-contrib]
-name=CentOS-6.8 - Contrib
-baseurl=http://vault.centos.org/6.8/contrib/$basearch/
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus&infra=$infra
+baseurl=https://vault.centos.org/6.10/centosplus/$basearch/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=0
-metadata_expire=never
-
-[C6.8-centosplus]
-name=CentOS-6.8 - CentOSPlus
-baseurl=http://vault.centos.org/6.8/centosplus/$basearch/
-gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-$releasever - Contrib
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=contrib&infra=$infra
+baseurl=https://vault.centos.org/6.10/contrib/$basearch/
+gpgcheck=1
 enabled=0
-metadata_expire=never
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
 
 ##################################################################################
