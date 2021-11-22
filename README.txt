@@ -13,67 +13,54 @@
 #
 #
 
-/etc/yum.repos.d/CentOS-Base.repo
-
-
-
-
-
-[base]
-name=CentOS-$releasever - Base
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os
-baseurl=http://vault.centos.org/6.8/os/x86_64/
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+[C6.8-base]
+name=CentOS-6.8 - Base
+baseurl=http://vault.centos.org/6.8/os/$basearch/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+enabled=1
+metadata_expire=never
 
-#=======================================================================================================
-#released updates
-[updates]
-name=CentOS-$releasever - Updates
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates
-baseurl=http://vault.centos.org/6.8/updates/x86_64/
-#baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
+[C6.8-updates]
+name=CentOS-6.8 - Updates
+baseurl=http://vault.centos.org/6.8/updates/$basearch/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+enabled=1
+metadata_expire=never
 
-#=======================================================================================================
-
-#additional packages that may be useful
-[extras]
-name=CentOS-$releasever - Extras
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=extras
-baseurl=http://vault.centos.org/6.8/extras/x86_64/
-#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
+[C6.8-extras]
+name=CentOS-6.8 - Extras
+baseurl=http://vault.centos.org/6.8/extras/$basearch/
 gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+enabled=1
+metadata_expire=never
 
-
-
-#===========================END=========================================================================
-
-#additional packages that extend functionality of existing packages
-[centosplus]
-name=CentOS-$releasever - Plus
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=centosplus
-baseurl=http://vault.centos.org/6.8/centosplus/x86_64/
-#baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
+[C6.8-contrib]
+name=CentOS-6.8 - Contrib
+baseurl=http://vault.centos.org/6.8/contrib/$basearch/
 gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
+metadata_expire=never
 
-#contrib - packages by Centos Users
-[contrib]
-name=CentOS-$releasever - Contrib
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=contrib
-baseurl=http://vault.centos.org/6.8/contrib/x86_64/
-#baseurl=http://mirror.centos.org/centos/$releasever/contrib/$basearch/
+[C6.8-centosplus]
+name=CentOS-6.8 - CentOSPlus
+baseurl=http://vault.centos.org/6.8/centosplus/$basearch/
 gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=0
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6.8
+metadata_expire=never
 
 
+##################################################################################
 
+#add this
+vi /etc/yum.conf
 
+sslverify=false
+
+#################
 
 yum clean all
