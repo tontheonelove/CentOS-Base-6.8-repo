@@ -1,4 +1,4 @@
-# centos 6.2  [Update 2022]
+# centos 6.2  [Update 2023]
 
 
 [base]
